@@ -1,0 +1,19 @@
+{
+  "name": "react-native-pantest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adision/react-native-pantest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Adision/react-native-pantest/issues"
+  },
+  "homepage": "https://github.com/Adision/react-native-pantest#readme"
+}
