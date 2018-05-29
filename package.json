@@ -1,6 +1,6 @@
 {
   "name": "react-native-pantest",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "这是一个封装测试组件",
   "main": "index.js",
   "scripts": {
