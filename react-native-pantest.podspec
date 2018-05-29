@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = package['name']
-  s.version      = "0.0.1"
+  s.version      = "v0.0.1"
   s.summary      = package['description']
 
   # This description is used to generate tags and improve search results.
@@ -30,6 +30,9 @@ Pod::Spec.new do |s|
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
                         封装测试组件
+                        React Native apps are built using the React JS
+                        framework, and render directly to native UIKit
+                        elements using a fully asynchronous architecture.
                    DESC
 
   s.homepage     = "https://github.com/Adision/react-native-pantest"
