@@ -14,16 +14,18 @@ $  git push --tags  //将tag推送到远程仓库
 命令行：pod lib lint    //验证podspec文件是否可正常使用
 执行命令：pod spec lint  XXX.podspec --verbose
 
-报错：1.fatal: Remote branch 1.0.0 not found in upstream origin:
-           这是因为在编辑 XXX.podspec 时, 里面的字段 s.verson, s.source 中的 tag与github创建的release版本号不一致导致, 修改为一样即可;
-           2.[iOS] file patterns: The `source_files` pattern did not match any file:
-           这个是在指定共享的类库时, 文件路径不对, 也就是设置s.source_files 字段时, 发生了错误;
-           3.加载xib问题:如果通过cocoapods下载的类库中含有Xib文件, 
-           使用原来的方式初始化就不起作用了:
-                    [[[NSBundle mainBundle] loadNibNamed:@"xibName" owner:self options:nil] lastObject];
-                    [self.collectionView registerNib:[UINib nibWithNibName:@"xibName" bundle:nil] forCellWithReuseIdentifier:@"ZLCollectionCell"];
+报错：
+        1.fatal: Remote branch 1.0.0 not found in upstream origin:
+                    这是因为在编辑 XXX.podspec 时, 里面的字段 s.verson, s.source 中的 tag与github创建的release版本号不一致导致, 修改为一样即可;
+        2.[iOS] file patterns: The `source_files` pattern did not match any file:
+            这个是在指定共享的类库时, 文件路径不对, 也就是设置s.source_files 字段时, 发生了错误;
+            
+     3.加载xib问题:如果通过cocoapods下载的类库中含有Xib文件, 
+       使用原来的方式初始化就不起作用了:
+            [[[NSBundle mainBundle] loadNibNamed:@"xibName" owner:self options:nil] lastObject];
+            [self.collectionView registerNib:[UINib nibWithNibName:@"xibName" bundle:nil] forCellWithReuseIdentifier:@"ZLCollectionCell"];
            
-        应该使用下面这种方式初始化:
+       应该使用下面这种方式初始化:
            #define kZLPhotoBrowserBundle [NSBundle bundleForClass:[self class]]
            [[kZLPhotoBrowserBundle loadNibNamed:@"ZLPhotoActionSheet" owner:self options:nil] lastObject];
            [self.collectionView registerNib:[UINib nibWithNibName:@"ZLCollectionCell" bundle:kZLPhotoBrowserBundle] forCellWithReuseIdentifier:@"ZLCollectionCell"];
@@ -90,10 +92,13 @@ s.resource_bundles：动态库所使用的资源文件存放位置，放在Resou
 s.subspec 'Info' do |ss| ：建立名称为Info的子文件夹（虚拟路径）
 
 
-附录：清理本地spec文件缓存\n
-$  pod cache list   //查看所有spec文件的缓存，可以直接到路径下删除文件\n
-$  pod cache clean AFNetworking    //删除指定库的缓存文件\n
-$  pod install --no-repo-update    //运行podfile文件但不更新本地spec文件\n
+附录：清理本地spec文件缓存
+
+$  pod cache list   //查看所有spec文件的缓存，可以直接到路径下删除文件
+
+$  pod cache clean AFNetworking    //删除指定库的缓存文件
+
+$  pod install --no-repo-update    //运行podfile文件但不更新本地spec文件
 
 
 
