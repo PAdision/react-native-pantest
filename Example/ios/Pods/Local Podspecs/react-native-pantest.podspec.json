@@ -1,0 +1,17 @@
+{
+  "name": "react-native-pantest",
+  "version": "1.0.2",
+  "summary": "这是一个封装测试组件",
+  "description": "封装测试组件\nReact Native apps are built using the React JS\nframework, and render directly to native UIKit\nelements using a fully asynchronous architecture.",
+  "homepage": "https://github.com/Adision/react-native-pantest",
+  "license": "MIT",
+  "authors": "",
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "git": "https://github.com/Adision/react-native-pantest.git",
+    "tag": "1.0.2"
+  },
+  "source_files": "class/**/*.{h,m}"
+}

@@ -1,0 +1,20 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+inhibit_all_warnings!
+target 'Example' do
+    pod 'React', :path => '../node_modules/react-native', :subspecs => [
+        'Core',
+        'RCTText',
+        'RCTNetwork',
+        'RCTWebSocket',
+        'RCTAnimation',
+        'RCTGeolocation',
+        'RCTImage',
+        'RCTActionSheet',
+        'RCTSettings',
+        'RCTLinkingIOS',
+	'DevSupport'
+    ]
+    pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
+    pod 'react-native-pantest', :path => '../node_modules/react-native-pantest'
+end
