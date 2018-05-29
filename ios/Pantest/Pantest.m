@@ -7,7 +7,6 @@
 //
 
 #import "Pantest.h"
-#import "RCTLog.h"
 
 @implementation Pantest
 
@@ -15,6 +14,6 @@ RCT_EXPORT_MODULE(Pantest);
 
 //测试方法导出
 RCT_EXPORT_METHOD(testPrint:(NSString*)name info:(NSDictionary*)info{
-    RCTLogInfo(@"%@:%@",name,info);
+    
 })
 @end

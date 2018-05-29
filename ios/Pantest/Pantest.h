@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RCTBridgeModule.h"
+#import <React/RCTViewManager.h>
 
-@interface Pantest : NSObject<RCTBridgeModule>
+@interface Pantest : RCTViewManager
 
 @end
