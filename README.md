@@ -15,10 +15,14 @@ $  git push --tags  //将tag推送到远程仓库
 执行命令：pod spec lint  XXX.podspec --verbose
 
 报错：
-        1.fatal: Remote branch 1.0.0 not found in upstream origin:
-                    这是因为在编辑 XXX.podspec 时, 里面的字段 s.verson, s.source 中的 tag与github创建的release版本号不一致导致, 修改为一样即可;
-        2.[iOS] file patterns: The `source_files` pattern did not match any file:
-            这个是在指定共享的类库时, 文件路径不对, 也就是设置s.source_files 字段时, 发生了错误;
+
+    1.fatal: Remote branch 1.0.0 not found in upstream origin:
+    
+      这是因为在编辑 XXX.podspec 时, 里面的字段 s.verson, s.source 中的 tag与github创建的release版本号不一致导致, 修改为一样即可;
+      
+    2.[iOS] file patterns: The `source_files` pattern did not match any file:
+    
+      这个是在指定共享的类库时, 文件路径不对, 也就是设置s.source_files 字段时, 发生了错误;
             
      3.加载xib问题:如果通过cocoapods下载的类库中含有Xib文件, 
        使用原来的方式初始化就不起作用了:
